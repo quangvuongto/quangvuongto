@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:moccasin;border:3px dashed white;padding:20px">
+
+
+  <h1 style="font-family:Verdana;color:blue">BMI Calculator</h1>
+  
+<div style ='10vh'> </div>
+  
+  <div style=" align-item: center; 
+    border: 2px dashed black;
+    padding: 20px;background-color:pink;
+    margin-right:100px
+    "> 
+     
+<input id="weight_value" placeholder="Enter your weight in kg">
+    <br>
+<input id="height_value" placeholder="Enter your height in m">
+    <br><br>
+  
+   <p id="id1"> Result: </p>
+<p id="id3" >  </p>
+  
+  </div>
+
+    
+  <button onclick="bmi_calculator()"> calculate </button> 
+
+  <script>
+
+// declare value
+  bmi_calculator()
+
+   function bmi_calculator()  {
+   
+var weight =document.getElementById("weight_value").value;
+     var height =document.getElementById("height_value").value;
+   
+      //var weight =parseInt(prompt('Enter your weight'));
+      
+    // var height =parseInt(prompt('Enter your Height'));
+     
+ 
+  var result1=(weight / (height*height));
+     
+      var input = document.getElementById("id1")
+ input.textContent = result1
+
+  
+      if( result1 <  18.5){
+          document.getElementById("id3").innerHTML = 'You Are underweight' 
+        input.style.color = 'purple'
+      }
+      else if( result1 >= 18.5 && result1 <= 24.9){
+       document.getElementById("id3").innerHTML = 'You Are normal' 
+         input.style.color = 'blue'
+      }
+
+       else if( result1 >= 25.0 && result1 <=29.99){
+           document.getElementById("id3").innerHTML = 'You Are overweight' 
+         input.style.color = 'green'
+      }  
+         else if( result1 >30){
+           document.getElementById("id3").innerHTML = 'obesity' 
+         input.style.color = 'yellow'
+      }  
+      else{
+        document.getElementById("id3").innerHTML = 'Status: ' 
+        input.style.color = 'black'
+      }
+      
+      
+    }
+    
+ 
+   
+  </script>
+  
+</body>
+
+</html>
